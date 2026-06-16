@@ -1,0 +1,134 @@
+{
+  "name": "Property",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Property name/title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "pg",
+        "hostel",
+        "room",
+        "flat"
+      ],
+      "description": "Type of accommodation"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "boys",
+        "girls",
+        "co-ed"
+      ],
+      "description": "Gender preference"
+    },
+    "city": {
+      "type": "string",
+      "description": "City name"
+    },
+    "area": {
+      "type": "string",
+      "description": "Area/locality"
+    },
+    "address": {
+      "type": "string",
+      "description": "Full address"
+    },
+    "nearest_college": {
+      "type": "string",
+      "description": "Name of nearest college"
+    },
+    "distance_from_college": {
+      "type": "string",
+      "description": "Distance from college e.g. 0.5 km"
+    },
+    "price_per_month": {
+      "type": "number",
+      "description": "Monthly rent"
+    },
+    "deposit": {
+      "type": "number",
+      "description": "Security deposit amount"
+    },
+    "sharing_options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Sharing types e.g. Single, Double, Triple"
+    },
+    "facilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of facilities"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Image URLs"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "contact_whatsapp": {
+      "type": "string",
+      "description": "WhatsApp number"
+    },
+    "owner_name": {
+      "type": "string",
+      "description": "Property owner name"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the property is verified"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Average rating"
+    },
+    "total_reviews": {
+      "type": "number",
+      "default": 0,
+      "description": "Total number of reviews"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Featured property flag"
+    },
+    "available_from": {
+      "type": "string",
+      "format": "date",
+      "description": "Available from date"
+    },
+    "food_included": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether food is included"
+    },
+    "ac_available": {
+      "type": "boolean",
+      "default": false,
+      "description": "AC availability"
+    }
+  },
+  "required": [
+    "title",
+    "property_type",
+    "city",
+    "price_per_month"
+  ]
+}

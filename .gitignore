@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+src/node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.production.local
+src/.env.production.local
+
+# Build output
+dist/
+src/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Vite
+*.local
+
+# Test / coverage
+coverage/
+.vercel

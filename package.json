@@ -1,0 +1,29 @@
+{
+  "name": "roomradar",
+  "private": true,
+  "version": "1.0.0",
+  "description": "RoomRadar — find student rooms and PGs near campus (Firebase backend)",
+  "scripts": {
+    "postinstall": "npm install --prefix src",
+    "emulators": "firebase emulators:start --only firestore,storage",
+    "seed": "node scripts/seed-emulator.mjs",
+    "seed:force": "node scripts/seed-emulator.mjs --force",
+    "seed:jabalpur": "node scripts/seed-jabalpur.mjs",
+    "seed:production": "node scripts/seed-production.mjs",
+    "deploy:vercel": "npm run build && npx vercel --prod",
+    "deploy:firebase": "npm run build && firebase deploy --only hosting",
+    "dev": "concurrently -k -n emulators,web -c blue,green \"npm run emulators\" \"npm run dev:web\"",
+    "dev:web": "wait-on tcp:127.0.0.1:8080 && npm run seed && npm run dev --prefix src",
+    "dev:app": "npm run dev --prefix src",
+    "build": "npm run build --prefix src",
+    "preview": "npm run preview --prefix src",
+    "lint": "npm run lint --prefix src",
+    "setup": "npm install && echo. && echo Created src/.env for local emulators. Run: npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "firebase": "^11.2.0",
+    "firebase-tools": "^13.29.1",
+    "wait-on": "^8.0.1"
+  }
+}
